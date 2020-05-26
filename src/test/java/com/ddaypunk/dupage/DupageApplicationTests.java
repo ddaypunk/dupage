@@ -1,10 +1,13 @@
 package com.ddaypunk.dupage;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
 class DupageApplicationTests {
@@ -14,7 +17,14 @@ class DupageApplicationTests {
 
 	@Test
 	void contextLoads() {
-		driver.get("https://google.com");
+		var url = "https://google.com"; // Java 10: Local type inference
+
+		driver.get(url);
+		var googleSearchInput = driver.findElement(By.cssSelector("[title='Search']"));
+		googleSearchInput.sendKeys("Star Wars");
+		googleSearchInput.sendKeys(Keys.RETURN);
+
+		assertTrue(driver.getCurrentUrl().contains("search"));
 	}
 
 }
