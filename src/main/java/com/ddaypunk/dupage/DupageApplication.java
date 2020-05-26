@@ -1,5 +1,6 @@
 package com.ddaypunk.dupage;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.springframework.boot.SpringApplication;
@@ -14,8 +15,9 @@ public class DupageApplication {
 	}
 
 	@Bean
-	private WebDriver getDriver() {
+	public WebDriver getDriver() {
 		// TODO: build this out to return driver specified by run config
+		WebDriverManager.chromedriver().setup();
 		return new ChromeDriver();
 	}
 }
