@@ -17,8 +17,8 @@ dependencies {
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
-
-	compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+	compile('org.seleniumhq.selenium:selenium-java:3.141.59')
+	compile("io.github.bonigarcia:webdrivermanager:4.0.0")
 }
 
 test {
