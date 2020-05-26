@@ -19,12 +19,17 @@ class DupageApplicationTests {
 	void contextLoads() {
 		var url = "https://google.com"; // Java 10: Local type inference
 
+		// navigate to page
 		driver.get(url);
+
+		// Find search input and utilize it
 		var googleSearchInput = driver.findElement(By.cssSelector("[title='Search']"));
 		googleSearchInput.sendKeys("Star Wars");
 		googleSearchInput.sendKeys(Keys.RETURN);
 
-		assertTrue(driver.getCurrentUrl().contains("search"));
+		// assert we are on the search view
+		assertTrue(driver.getCurrentUrl().contains("search")
+				&& driver.getCurrentUrl().contains("Star+Wars"));
 	}
 
 }
