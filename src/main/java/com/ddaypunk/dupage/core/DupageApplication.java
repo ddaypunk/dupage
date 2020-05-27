@@ -1,4 +1,4 @@
-package com.ddaypunk.dupage;
+package com.ddaypunk.dupage.core;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
