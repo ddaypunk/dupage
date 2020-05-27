@@ -1,0 +1,21 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Chrome Test" type="JUnit" factoryName="JUnit">
+    <module name="dupage.test" />
+    <useClassPathOnly />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="com.ddaypunk.dupage.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <option name="PACKAGE_NAME" value="com.ddaypunk.dupage" />
+    <option name="MAIN_CLASS_NAME" value="com.ddaypunk.dupage.DupageApplicationTests" />
+    <option name="METHOD_NAME" value="contextLoads" />
+    <option name="TEST_OBJECT" value="method" />
+    <option name="VM_PARAMETERS" value="-ea -Dselenium.browser=chrome" />
+    <option name="PARAMETERS" value="" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
