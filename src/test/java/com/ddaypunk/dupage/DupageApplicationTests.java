@@ -1,15 +1,18 @@
 package com.ddaypunk.dupage;
 
+import com.ddaypunk.dupage.core.DupageApplication;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@SpringBootTest
+@SpringBootTest(classes = DupageApplication.class)
 class DupageApplicationTests {
 
 	@Autowired
@@ -26,6 +29,10 @@ class DupageApplicationTests {
 		var googleSearchInput = driver.findElement(By.cssSelector("[title='Search']"));
 		googleSearchInput.sendKeys("Star Wars");
 		googleSearchInput.sendKeys(Keys.RETURN);
+
+		// TODO: Extract this to wrapper class
+		WebDriverWait wait = new WebDriverWait(driver, 5);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("result-stats")));
 
 		// assert we are on the search view
 		assertTrue(driver.getCurrentUrl().contains("search")
