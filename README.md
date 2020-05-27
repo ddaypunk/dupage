@@ -19,3 +19,8 @@ Java 14 Selenium Framework with SpringBoot
 As in most Java projects, framework implementation will go in `src` directory and and unit tests of the framework (if needed) belong in `test` directory.
 
 If added, Cucumber/RestAssured/etc test scripts/specs will also belong in the `test` directory.
+
+## Running tests
+There is a basic runner to run the context test in the /.run folder. If I am correct, this should appear in IntelliJ as a run option, but to check this I would need to reimport the project and see what happens. I will test this through a collaborator instead first.
+
+This should appear in the upper right in IntelliJ next to a play button. It is setup to just run the one example SpringBoot test in Chrome browser. You can adjust the `selenium.browser` VM option to other browsers to run it in that browser. I have noticed that the first run seems to fail possibly due to webdriver manager downloading the needed driver. A second run seems to usually work though.
