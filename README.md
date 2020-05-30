@@ -1,4 +1,4 @@
-# dupage
+# dupage [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/ddaypunk06/dupage) 
 Java 14 Selenium Framework with SpringBoot
 
 ## Prerequisites
