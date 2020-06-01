@@ -20,7 +20,7 @@ public class DriverFactory {
     private static final Browser BROWSER = fromName(Props.BROWSER.getValue());
 
     public WebDriver getConfiguredDriver() {
-        return switch (BROWSER) {
+        return switch (BROWSER) { // Java 14: Switch expressions
             case CHROME -> getChromeDriver();
             case EDGE -> getEdgeDriver();
             case FIREFOX -> getFirefoxDriver();
