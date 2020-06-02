@@ -11,6 +11,8 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
+import java.util.Objects;
+
 import static com.ddaypunk.dupage.core.enums.Browser.fromName;
 
 /**
@@ -20,7 +22,7 @@ public class DriverFactory {
     private static final Browser BROWSER = fromName(Props.BROWSER.getValue());
 
     public WebDriver getConfiguredDriver() {
-        return switch (BROWSER) { // Java 14: Switch expressions
+        return switch (Objects.requireNonNull(BROWSER)) { // Java 14: Switch expressions
             case CHROME -> getChromeDriver();
             case EDGE -> getEdgeDriver();
             case FIREFOX -> getFirefoxDriver();
@@ -42,11 +44,13 @@ public class DriverFactory {
     }
 
     private WebDriver getEdgeDriver(){
+        // TODO: Browser version conflict with driver WDM gives
         WebDriverManager.edgedriver().setup();
         return new EdgeDriver();
     }
 
     private WebDriver getIEDriver() {
+        // TODO: This browser only starts up, but nothing happens
         WebDriverManager.iedriver().setup();
         return new InternetExplorerDriver();
     }
