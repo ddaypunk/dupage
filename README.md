@@ -28,14 +28,14 @@ This should appear in the upper right in IntelliJ next to a play button. It is s
 ## Contributing to the repo using git (branching and all that jazz)
 There are many ways to do this, and ask me if you need some ideas on how to setup git. The normal flow will be as below (using git command line). If you know how to, you can also use a git GUI for this like the one in IntelliJ or others like Git Kraken.
 
-1. Using terminal, please fetch and pull down the master branch: `git fetch origin && git checkout origin/master`.
+1. Using terminal, please fetch and pull down the main branch: `git fetch origin && git checkout origin/main`.
 2. Then create a named dev branch locally: `git checkout -b your-named-branch`. This will create a development branch locally for you to work off of.
 3. Make your changes in IntelliJ
 4. In terminal, `git add .` will add all of your changes to stage (ready to be committed)
 5. Then commit the changes `git commit -m "message to explain what was changed"`
 6. Then push changes to github `git push -u origin your-named-branch`
 7. After some git magic, git should give you a link to make a pull request to the repo, click this
-8. Target the master branch, from your-named-branch, provide some details, and tag people you want to review it
-9. Once approved by a team member, you can click the arrow on the merge button and set to squash and merge. This will merge all of your changes into one commit message and then merge it to master.
+8. Target the main branch, from your-named-branch, provide some details, and tag people you want to review it
+9. Once approved by a team member, you can click the arrow on the merge button and set to squash and merge. This will merge all of your changes into one commit message and then merge it to main.
 
 Please ask me to show you how to do things directly in IntelliJ. It will be easier to explain
