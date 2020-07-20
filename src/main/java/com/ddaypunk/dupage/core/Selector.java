@@ -1,5 +1,7 @@
 package com.ddaypunk.dupage.core;
 
+import com.ddaypunk.dupage.core.enums.Format;
+
 import org.openqa.selenium.By;
 
 /**
@@ -8,8 +10,6 @@ import org.openqa.selenium.By;
 public class Selector {
     private String attribute;
     private String value;
-    private final String formatWithValue = "[%s=\'%s\']";
-    private final String formatWithoutValue = "[%s]";
 
     /**
      * Construct a selector in the format of "[data-test-component]"
@@ -68,10 +68,12 @@ public class Selector {
 
     // Private Selector Methods
     private By getByWithoutValue() {
-        return By.cssSelector(String.format(formatWithoutValue, attribute));
+        String formattedString = String.format(Format.WITHOUT_VALUE.get(), attribute);
+        return By.cssSelector(formattedString);
     }
 
     private By getByWithValue() {
-        return By.cssSelector(String.format(formatWithValue, attribute, value));
+        String formattedString = String.format(Format.WITH_VALUE.get(), attribute, value);
+        return By.cssSelector(formattedString);
     }
 }
