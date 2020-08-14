@@ -10,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -19,15 +20,16 @@ class DupageApplicationTests {
 
 	@Autowired
 	private WebDriver driver;
-	private static final Logger LOGGER = LogManager.getLogger("test");
+	private static final Logger LOGGER = LogManager.getLogger("App Tests");
+
+	@Value("${test.host:https://google.com}")
+	String host;
 
 	@Test
 	void contextLoads() {
-		var url = "https://google.com"; // Java 10: Local type inference
-
 		// navigate to page
 		LOGGER.info("Navigating to test page");
-		driver.get(url);
+		driver.get(host);
 
 		// Find search input and utilize it
 		LOGGER.info("Getting search input and entering search query");
