@@ -52,7 +52,7 @@ public class Component extends RemoteWebElement {
      * Get the current root element of the component, checking for nullness and staleness of root
      * @return root element as a WebElement
      */
-    public WebElement get() {
+    public WebElement getRoot() {
         if(this.root == null) {
             LOGGER.debug("Component root is null, setting root...");
             setRoot();
