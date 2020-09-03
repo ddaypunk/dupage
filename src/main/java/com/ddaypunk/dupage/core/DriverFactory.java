@@ -21,7 +21,7 @@ import static com.ddaypunk.dupage.core.enums.Browser.fromName;
 public class DriverFactory {
     private static final Browser BROWSER = fromName(Props.BROWSER.getValue());
 
-    public WebDriver getConfiguredDriver() {
+    public WebDriver getDriver() {
         return switch (Objects.requireNonNull(BROWSER)) { // Java 14: Switch expressions
             case CHROME -> getChromeDriver();
             case EDGE -> getEdgeDriver();
