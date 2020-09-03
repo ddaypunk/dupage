@@ -12,7 +12,8 @@ public class Button extends Component {
         super(selector, isVisibilityRequired);
     }
 
+    @Override
     public void click(){
-        get().click();
+        getRoot().click();
     }
 }
