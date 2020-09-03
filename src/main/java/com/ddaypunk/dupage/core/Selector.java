@@ -2,7 +2,6 @@ package com.ddaypunk.dupage.core;
 
 import com.ddaypunk.dupage.core.enums.Format;
 import org.openqa.selenium.By;
-import org.springframework.beans.factory.annotation.Value;
 
 /**
  * Encapsulation of custom attribute selectors
@@ -10,9 +9,6 @@ import org.springframework.beans.factory.annotation.Value;
 public class Selector {
     private String attribute;
     private String value;
-
-    @Value("${selector.prefix:data-test-}")
-    String prefix;
 
     /**
      * Construct a selector in the format of "[data-test-component]"
@@ -25,7 +21,7 @@ public class Selector {
             throw new IllegalArgumentException("Selector attribute must not be null!");
         }
 
-        this.attribute = prefix + attribute;
+        this.attribute = attribute;
     }
 
     /**
@@ -39,7 +35,7 @@ public class Selector {
             throw new IllegalArgumentException("Selector attribute must not be null!");
         }
 
-        this.attribute = prefix + attribute;
+        this.attribute = attribute;
         this.value = value;
     }
 
