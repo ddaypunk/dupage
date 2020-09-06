@@ -1,4 +1,4 @@
-package com.ddaypunk.dupage.components;
+package com.ddaypunk.dupage.aut.components;
 
 import com.ddaypunk.dupage.core.Selector;
 import com.ddaypunk.dupage.core.Wait;
@@ -6,8 +6,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.Duration;
 
@@ -15,6 +17,9 @@ import static com.ddaypunk.dupage.core.enums.Condition.VISIBILITY;
 
 public class Component extends RemoteWebElement {
     private static final Logger LOGGER = LogManager.getLogger("Component");
+
+    @Autowired
+    private WebDriver driver;
 
     private WebElement root = null;
     private By selector = null;
@@ -67,6 +72,7 @@ public class Component extends RemoteWebElement {
     private void setRoot() {
         Wait waiter = new Wait
                 .Builder()
+                .with(driver)
                 ._for(VISIBILITY)
                 .of(selector)
                 .until(Duration.ofSeconds(10))
@@ -82,5 +88,10 @@ public class Component extends RemoteWebElement {
         } catch (StaleElementReferenceException e) {
             return true;
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Component from:" + selector;
     }
 }

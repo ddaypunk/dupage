@@ -6,23 +6,26 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.Duration;
 
 public class Wait {
-    @Autowired
     private WebDriver driver;
-
     private Condition condition;
     private By selector;
     private Duration duration;
 
 
     public static final class Builder {
+        private WebDriver driver;
         private Condition condition;
         private By selector;
         private Duration duration;
+
+        public Builder with(WebDriver driver) {
+            this.driver = driver;
+            return this;
+        }
 
         public Builder _for(Condition condition) {
             this.condition = condition;
@@ -41,6 +44,7 @@ public class Wait {
 
         public Wait build() {
             Wait wait = new Wait();
+            wait.driver = this.driver;
             wait.condition = this.condition;
             wait.duration = this.duration;
             wait.selector = this.selector;

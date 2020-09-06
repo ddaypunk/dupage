@@ -11,4 +11,4 @@ USER gitpod
 #     sudo apt-get install -yq bastet && \
 #     sudo rm -rf /var/lib/apt/lists/*
 #
-# More information: https://www.gitpod.io/docs/config-docker/
+# More information: https://www.gitpod.io/docs/com.ddaypunk.dupage.config-docker/
