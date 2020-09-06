@@ -1,6 +1,6 @@
-package com.ddaypunk.dupage;
+package tests;
 
-import com.ddaypunk.dupage.components.Button;
+import com.ddaypunk.dupage.aut.components.Button;
 import com.ddaypunk.dupage.core.DupageApplication;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -13,10 +13,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest(classes = DupageApplication.class)
+//@SpringJUnitConfig(DupageConfig.class)
 public class DupageComponentTests {
 
     @Autowired
     private WebDriver driver;
+
     private static final Logger LOGGER = LogManager.getLogger("Component Tests");
 
     @Value("${test.host}")

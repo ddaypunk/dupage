@@ -1,4 +1,4 @@
-package com.ddaypunk.dupage.components;
+package com.ddaypunk.dupage.aut.components;
 
 import com.ddaypunk.dupage.core.Selector;
 

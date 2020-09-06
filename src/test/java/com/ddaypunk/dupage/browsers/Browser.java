@@ -1,4 +1,4 @@
-package com.ddaypunk.dupage.core.enums;
+package com.ddaypunk.dupage.browsers;
 
 import javax.annotation.Nullable;
 
