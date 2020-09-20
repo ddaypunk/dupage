@@ -6,24 +6,30 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.time.Duration;
 
+@Component
 public class Wait {
-    private WebDriver driver;
+    @Autowired
+    private WebDriver webDriver;
+
     private Condition condition;
     private By selector;
     private Duration duration;
 
 
     public static final class Builder {
-        private WebDriver driver;
+        @Autowired
+        private WebDriver webDriver;
         private Condition condition;
         private By selector;
         private Duration duration;
 
         public Builder with(WebDriver driver) {
-            this.driver = driver;
+            this.webDriver = driver;
             return this;
         }
 
@@ -44,7 +50,7 @@ public class Wait {
 
         public Wait build() {
             Wait wait = new Wait();
-            wait.driver = this.driver;
+            wait.webDriver = this.webDriver;
             wait.condition = this.condition;
             wait.duration = this.duration;
             wait.selector = this.selector;
@@ -61,7 +67,7 @@ public class Wait {
     }
 
     private WebElement waitForVisOf() {
-        WebDriverWait wait = new WebDriverWait(driver, duration.toSeconds());
+        WebDriverWait wait = new WebDriverWait(webDriver, duration.toSeconds());
         return wait.until(ExpectedConditions.visibilityOfElementLocated(selector));
     }
 }
