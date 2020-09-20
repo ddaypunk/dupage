@@ -12,9 +12,6 @@ import org.springframework.context.annotation.*;
 @ComponentScan(basePackages = "com.ddaypunk.dupage")
 public class DupageConfig {
     @Autowired
-    private DesiredCapabilities caps;
-
-    @Autowired
     private ChromeOptions opts;
 
     @Bean
