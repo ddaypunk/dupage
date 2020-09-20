@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Profile("web")
 public class WebGoogleHome implements GoogleHome {
-    @Value("${app.test.host}")
+    @Value("${app.google.host}")
     private String host;
 
     @Autowired
