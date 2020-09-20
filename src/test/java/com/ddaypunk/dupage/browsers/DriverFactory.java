@@ -30,6 +30,7 @@ public class DriverFactory {
     @Autowired
     private WebDriver chromeDriver;
 
+    // Moved to simpler bean in DupageConfig for now
 //    @Bean
 //    @Profile("web")
 //    public WebDriver getDriver() {

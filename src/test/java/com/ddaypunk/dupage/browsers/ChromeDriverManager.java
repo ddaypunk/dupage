@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ChromeDriverManager extends DriverManager{
+    // Moved to simpler bean in DupageConfig for now
     // Thank you to https://stackoverflow.com/questions/43935784/spring-dependency-integration-with-selenium
 
     @Autowired

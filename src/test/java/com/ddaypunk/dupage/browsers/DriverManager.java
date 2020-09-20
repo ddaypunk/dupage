@@ -2,6 +2,7 @@ package com.ddaypunk.dupage.browsers;
 
 import org.openqa.selenium.WebDriver;
 
+// Moved to simpler bean in DupageConfig for now
 public abstract class DriverManager {
     protected WebDriver driver;
     protected abstract void initializeDriver();
