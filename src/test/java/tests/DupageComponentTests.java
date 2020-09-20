@@ -1,42 +1,31 @@
 package tests;
 
-import com.ddaypunk.dupage.aut.components.Button;
-import com.ddaypunk.dupage.core.DupageApplication;
+import com.ddaypunk.dupage.aut.models.implementations.web.WebPlaygroundHome;
+import com.ddaypunk.dupage.config.DupageConfig;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.jupiter.api.Test;
-import org.openqa.selenium.WebDriver;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
-@SpringBootTest(classes = DupageApplication.class)
-//@SpringJUnitConfig(DupageConfig.class)
-public class DupageComponentTests {
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(classes = DupageConfig.class)
+public class DupageComponentTests extends BaseTest{
 
     @Autowired
-    private WebDriver driver;
+    private WebPlaygroundHome webPlaygroundHome;
 
     private static final Logger LOGGER = LogManager.getLogger("Component Tests");
 
-    @Value("${test.host}")
-    String host;
-
     @Test
-    void testSiteWithButtonLoads() {
+    public void testSiteWithButtonLoads() {
         // navigate to page
         LOGGER.info("Navigating to test page");
-        driver.get(host);
+        webPlaygroundHome.load();
+        webPlaygroundHome.clickLearnReact();
 
-        var button = new Button("Learn React");
-        button.click();
-
-        assertTrue(driver.getCurrentUrl().contains("playground"));
-
-        button.click();
-
-        assertTrue(driver.getCurrentUrl().contains("reactjs.org"));
+//        assertTrue(driver.getCurrentUrl().contains("reactjs.org"));
     }
 }

@@ -2,19 +2,22 @@ package tests;
 
 import com.ddaypunk.dupage.aut.models.GoogleHome;
 import com.ddaypunk.dupage.aut.models.GoogleResults;
-import com.ddaypunk.dupage.core.DupageApplication;
+import com.ddaypunk.dupage.config.DupageConfig;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@SpringBootTest(classes = DupageApplication.class)
-class DupageApplicationTests {
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(classes = DupageConfig.class)
+class DupageApplicationTests extends BaseTest {
 
 	@Autowired
 	private WebDriver driver;
