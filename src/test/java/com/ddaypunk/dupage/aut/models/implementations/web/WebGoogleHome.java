@@ -15,6 +15,7 @@ public class WebGoogleHome implements GoogleHome {
     @Value("${app.test.host}")
     private String host;
 
+    @Autowired
     private final WebDriver driver;
 
     @Autowired

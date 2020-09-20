@@ -8,10 +8,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Component;
 
 import static org.junit.Assert.assertTrue;
 
+@Component
+@Profile("web")
 public class WebGoogleResults implements GoogleResults {
+
+    @Autowired
     private final WebDriver driver;
     private static final Logger LOGGER = LogManager.getLogger("Google Results");
 
