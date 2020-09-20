@@ -12,7 +12,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = DupageConfig.class)
 //@SpringBootTest(classes = DupageApplication.class)
-public class ChromeDriverTests {
+public class ChromeDriverTests extends BaseTest{
 
         @Autowired
         WebGoogleHome webGoogleHome;
