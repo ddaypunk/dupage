@@ -6,7 +6,7 @@ public enum Format {
 
     private String stringy;
 
-    private Format(String formatter) {
+    Format(String formatter) {
         this.stringy = formatter;
     }
 

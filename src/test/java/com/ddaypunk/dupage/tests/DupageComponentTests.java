@@ -1,7 +1,7 @@
-package tests;
+package com.ddaypunk.dupage.tests;
 
-import com.ddaypunk.dupage.aut.models.implementations.web.WebPlaygroundHome;
-import com.ddaypunk.dupage.config.DupageConfig;
+import com.ddaypunk.dupage.DupageConfig;
+import com.ddaypunk.dupage.views.web.WebPlaygroundHome;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Test;
