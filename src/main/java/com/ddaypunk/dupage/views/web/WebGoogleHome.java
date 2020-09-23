@@ -1,6 +1,6 @@
-package com.ddaypunk.dupage.aut.models.implementations.web;
+package com.ddaypunk.dupage.views.web;
 
-import com.ddaypunk.dupage.aut.models.GoogleHome;
+import com.ddaypunk.dupage.views.interfaces.GoogleHome;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;

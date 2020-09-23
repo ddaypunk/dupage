@@ -1,6 +1,6 @@
-package com.ddaypunk.dupage.aut.models.implementations.web;
+package com.ddaypunk.dupage.views.web;
 
-import com.ddaypunk.dupage.aut.models.GoogleResults;
+import com.ddaypunk.dupage.views.interfaces.GoogleResults;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;

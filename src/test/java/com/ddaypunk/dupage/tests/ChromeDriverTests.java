@@ -1,8 +1,8 @@
-package tests;
+package com.ddaypunk.dupage.tests;
 
-import com.ddaypunk.dupage.aut.models.implementations.web.WebGoogleHome;
-import com.ddaypunk.dupage.aut.models.implementations.web.WebGoogleResults;
-import com.ddaypunk.dupage.config.DupageConfig;
+import com.ddaypunk.dupage.DupageConfig;
+import com.ddaypunk.dupage.views.web.WebGoogleHome;
+import com.ddaypunk.dupage.views.web.WebGoogleResults;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,7 @@ public class ChromeDriverTests extends BaseTest{
         WebGoogleResults webGoogleResults;
 
         @Test
-        public void run() {
+        public void searchForStarWarsOnGoogleAndVerifySearchResultsDisplay() {
                 webGoogleHome.load();
                 webGoogleHome.searchFor("Star Wars");
                 webGoogleResults.getFirstResultTitle().contains("Star Wars");

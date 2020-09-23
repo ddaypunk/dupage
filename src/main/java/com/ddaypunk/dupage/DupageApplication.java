@@ -1,4 +1,4 @@
-package com.ddaypunk.dupage.core;
+package com.ddaypunk.dupage;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

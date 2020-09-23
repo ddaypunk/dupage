@@ -1,8 +1,8 @@
-package tests;
+package com.ddaypunk.dupage.tests;
 
-import com.ddaypunk.dupage.aut.models.GoogleHome;
-import com.ddaypunk.dupage.aut.models.GoogleResults;
-import com.ddaypunk.dupage.config.DupageConfig;
+import com.ddaypunk.dupage.DupageConfig;
+import com.ddaypunk.dupage.views.interfaces.GoogleHome;
+import com.ddaypunk.dupage.views.interfaces.GoogleResults;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Test;

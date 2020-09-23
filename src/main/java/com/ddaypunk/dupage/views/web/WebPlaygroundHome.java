@@ -1,7 +1,7 @@
-package com.ddaypunk.dupage.aut.models.implementations.web;
+package com.ddaypunk.dupage.views.web;
 
-import com.ddaypunk.dupage.aut.components.Button;
-import com.ddaypunk.dupage.aut.models.PlaygroundHome;
+import com.ddaypunk.dupage.components.Button;
+import com.ddaypunk.dupage.views.interfaces.PlaygroundHome;
 import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

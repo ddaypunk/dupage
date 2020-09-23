@@ -1,4 +1,4 @@
-package tests;
+package com.ddaypunk.dupage.tests;
 
 import org.junit.After;
 import org.openqa.selenium.WebDriver;
